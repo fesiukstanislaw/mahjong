@@ -60,6 +60,8 @@ export class CardComponent implements OnInit {
   click(event: any){ //Тут повина була бути логіка відгадування карток
     let clickValue = event.target.innerText;
     if(clickValue == this.prevValue){ //
+    let classCheck = event.target.classList;
+      classCheck.add('clicked');
       let  al = setTimeout(function(){
         classCheck.add('clicked');
       },1500);

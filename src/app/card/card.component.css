@@ -15,7 +15,7 @@
   color: transparent;
 }
 .clicked{
-  color: black;
+  color: black !important;
 }
 .guessed{
   border: 1px solid green;
