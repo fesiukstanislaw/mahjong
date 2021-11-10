@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {state, style, transition, trigger, animate} from "@angular/animations";
 
 @Component({
@@ -18,7 +18,7 @@ import {state, style, transition, trigger, animate} from "@angular/animations";
 
   ],
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, AfterViewInit {
   cards: number[] = [];
 
   prevValue = [];
@@ -59,18 +59,9 @@ export class CardComponent implements OnInit {
 
   click(event: any){ //Тут повина була бути логіка відгадування карток
     let clickValue = event.target.innerText;
-    if(clickValue == this.prevValue){ //
     let classCheck = event.target.classList;
       classCheck.add('clicked');
-      let  al = setTimeout(function(){
-        classCheck.add('clicked');
-      },1500);
-    }
     this.prevValue = event;
-    let classCheck = event.target.classList;
-    let  al = setTimeout(function(){
-      classCheck.add('clicked');
-    },250);
   }
 
   ngAfterViewInit() {
