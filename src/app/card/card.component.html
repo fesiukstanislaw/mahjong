@@ -1,0 +1,5 @@
+<div class="card">
+<div class ="card-item"(click)="click($event)" *ngFor="let card of cards, index as i" (click)="expand(i)" [@expandedPanel]="state[i]">
+  {{card}}
+</div>
+</div>
