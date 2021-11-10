@@ -10,6 +10,12 @@ import {state, style, transition, trigger, animate} from "@angular/animations";
       state('clicked', style({ boxShadow: '0 0 5px rgb(12, 136, 243, 0.5)' })),
       transition('initial <=> expanded', animate('0.8s')),
     ]),
+    trigger('fade', [
+      state('false', style({ color: 'black' })),
+      state('true', style({ color: 'transparent' })),
+      transition('false => true', animate('4000ms ease-in'))
+    ]),
+
   ],
 })
 export class CardComponent implements OnInit {
@@ -19,6 +25,8 @@ export class CardComponent implements OnInit {
 
   isExpanded: boolean = false
   state: string[] = ['initial']
+
+  public fadeIn = false;
 
   constructor() { }
 
@@ -61,6 +69,10 @@ export class CardComponent implements OnInit {
     let  al = setTimeout(function(){
       classCheck.add('clicked');
     },250);
+  }
+
+  ngAfterViewInit() {
+    this.fadeIn = true;
   }
 
 }

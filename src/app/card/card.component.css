@@ -3,7 +3,7 @@
   grid-template-rows: repeat(10, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 8px;
-  margin: 40px 440px 0 440px;
+  margin: 40px 200px 0 200px;
 }
 .card-item{
   margin: 10px;
